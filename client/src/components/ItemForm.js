@@ -34,92 +34,103 @@ const ItemsForm = () => {
     return ( 
         <ItemsStyles>
             <form>
-                <label htmlFor="name">
+                <label htmlFor="Item Name">
                     <input 
                         type="text"
+                        name="name"
                         placeholder="Enter Item Name"
                         value={initValues.name}
                         onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Quantity">
+                <label htmlFor="Item Quantity">
                     <input
-                    type="number"
-                    placeholder="0"
-                    value={initValues.quantity}
-                    onChange={handleChange}
+                        type="number"
+                        name="quantity"
+                        placeholder="0"
+                        value={initValues.quantity}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Price">
+                <label htmlFor="Item Price">
                     <input
-                    type="float"
-                    placeholder="0.00"
-                    value={initValues.price}
-                    onChange={handleChange}
+                        type="float"
+                        name="price"
+                        placeholder="0.00"
+                        value={initValues.price}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Category">
+                <label htmlFor="Item Category">
                     <input
-                    type="text"
-                    placeholder="Enter Item Category"
-                    value={initValues.category}
-                    onChange={handleChange}
+                        type="text"
+                        name="category"
+                        placeholder="Enter Item Category"
+                        value={initValues.category}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="SKU">
+                <label htmlFor="Item SKU">
                     <input
-                    type="number"
-                    placeholder="0"
-                    value={initValues.sku}
-                    onChange={handleChange}
+                        type="number"
+                        name="sku"
+                        placeholder="0"
+                        value={initValues.sku}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Sold">
+                <label htmlFor="Items Sold">
                     <input
-                    type="number"
-                    placeholder="0"
-                    value={initValues.sold}
-                    onChange={handleChange}
+                        type="number"
+                        name="sold"
+                        placeholder="0"
+                        value={initValues.sold}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="On Hand">
+                <label htmlFor="Items On Hand">
                     <input
-                    type="number"
-                    placeholder="0"
-                    value={initValues.onHand}
-                    onChange={handleChange}
+                        type="number"
+                        name="onHand"
+                        placeholder="0"
+                        value={initValues.onHand}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Description">
+                <label htmlFor="Item Description">
                     <input
-                    type="text"
-                    placeholder="Enter Item Description"
-                    value={initValues.desc}
-                    onChange={handleChange}
+                        type="text"
+                        name="desc"
+                        placeholder="Enter Item Description"
+                        value={initValues.desc}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Tags">
+                <label htmlFor="Item Tags">
                     <input
-                    type="text"
-                    placeholder="Enter Item Tags"
-                    value={initValues.tags}
-                    onChange={handleChange}
+                        type="text"
+                        name="tags"
+                        placeholder="Enter Item Tags"
+                        value={initValues.tags}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="On Floor">
+                <label htmlFor="Items On Floor">
                     <input
-                    type="number"
-                    placeholder="0"
-                    value={initValues.onFloor}
-                    onChange={handleChange}
+                        type="number"
+                        name="onFloor"
+                        placeholder="0"
+                        value={initValues.onFloor}
+                        onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Owner">
+                <label htmlFor="Item Owner">
                     <input
-                    type="text"
-                    placeholder="Who Owns This Item Entry"
-                    value={initValues.owner}
-                    onChange={handleChange}
+                        type="text"
+                        name="owner"
+                        placeholder="Who Owns This Item Entry"
+                        value={initValues.owner}
+                        onChange={handleChange}
                     />
                 </label>                
             </form>

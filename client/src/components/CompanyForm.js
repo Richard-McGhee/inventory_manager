@@ -28,6 +28,7 @@ const CompanyForm = () => {
                 <label htmlFor="Company Name">
                     <input 
                         type="text"
+                        name="name"
                         placeholder="Enter Company Name"
                         value={formState.name}
                         onChange={handleChange}
@@ -36,6 +37,7 @@ const CompanyForm = () => {
                 <label htmlFor="Company Size">
                     <input
                         type="text"
+                        name="size"
                         placeholder="Enter Company Size"
                         value={formState.size}
                         onChange={handleChange}
@@ -44,6 +46,7 @@ const CompanyForm = () => {
                 <label htmlFor="Company Owner(s)">
                     <input
                         type="text"
+                        name="owners"
                         placeholder="Who Owns This Company?"
                         value={formState.owners}
                         onChange={handleChange}
@@ -54,4 +57,4 @@ const CompanyForm = () => {
     )
 }
  
-export default CompanyForm;
+export default CompanyForm

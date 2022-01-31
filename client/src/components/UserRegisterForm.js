@@ -2,7 +2,14 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const UserStyles = styled.div`
-
+    form{
+        display: flex;
+        justify-content: space-around;
+    }
+    label{
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 const UserForm = () => {
@@ -13,6 +20,7 @@ const UserForm = () => {
         comapnies: ""
     }
     const [formState, setFormState] = useState(initValues)
+    const [registerInfo, setRegisterInfo] = useState(initValues)
 
     const handleChange = evt => {
         setFormState({
@@ -21,12 +29,14 @@ const UserForm = () => {
     }
     const handleSubmit = evt => {
         evt.preventDefault()
+        setRegisterInfo(formState)
     }
 
     return ( 
         <UserStyles>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="User Name">
+                    UserName
                     <input 
                         type="text"
                         name="name"
@@ -36,6 +46,7 @@ const UserForm = () => {
                     />
                 </label>
                 <label htmlFor="User Password">
+                    Password
                     <input
                         type="text"
                         name="password"
@@ -45,6 +56,7 @@ const UserForm = () => {
                     />
                 </label>
                 <label htmlFor="User Email">
+                    Email
                     <input
                         type="email"
                         name="email"
@@ -54,6 +66,7 @@ const UserForm = () => {
                     />
                 </label>
                 <label htmlFor="User Companies">
+                    Companies
                     <input
                         type="text"
                         name="companies"

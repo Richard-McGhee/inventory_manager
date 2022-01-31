@@ -2,7 +2,18 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const ItemsStyles = styled.div`
-
+    form{
+        margin: 0 auto;
+        margin-top: 5%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        display: flex;
+        flex-direction: column;
+        margin: 2% 0;
+    }
 `
 
 const ItemsForm = () => {
@@ -33,8 +44,9 @@ const ItemsForm = () => {
 
     return ( 
         <ItemsStyles>
-            <form>
+            <form onSubmit={handleSubmit}> 
                 <label htmlFor="Item Name">
+                    Name
                     <input 
                         type="text"
                         name="name"
@@ -44,6 +56,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Item Quantity">
+                    Quantity
                     <input
                         type="number"
                         name="quantity"
@@ -53,6 +66,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Item Price">
+                    Price
                     <input
                         type="float"
                         name="price"
@@ -62,6 +76,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Item Category">
+                    Category
                     <input
                         type="text"
                         name="category"
@@ -71,6 +86,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Item SKU">
+                    SKU
                     <input
                         type="number"
                         name="sku"
@@ -80,6 +96,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Items Sold">
+                    #Sold
                     <input
                         type="number"
                         name="sold"
@@ -89,6 +106,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Items On Hand">
+                    #On Hand
                     <input
                         type="number"
                         name="onHand"
@@ -98,6 +116,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Item Description">
+                    Description
                     <input
                         type="text"
                         name="desc"
@@ -107,6 +126,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Item Tags">
+                    Tags
                     <input
                         type="text"
                         name="tags"
@@ -116,6 +136,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Items On Floor">
+                    #On Floor
                     <input
                         type="number"
                         name="onFloor"
@@ -125,6 +146,7 @@ const ItemsForm = () => {
                     />
                 </label>
                 <label htmlFor="Item Owner">
+                    Owner
                     <input
                         type="text"
                         name="owner"

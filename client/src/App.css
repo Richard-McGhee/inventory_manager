@@ -1,1 +1,18 @@
-
+nav{
+    font-size: 24px;
+    width: 40%;
+    margin: 1% auto;
+    display: flex;
+    justify-content: space-around;
+    /* border: 3px solid green; */
+}
+a{
+    color:#d3c422;
+    text-decoration: none;
+}
+a:hover{
+    color: #E4DDDE;
+}
+a:nth-child(2){
+    font-weight: bold;
+}

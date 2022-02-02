@@ -29,7 +29,7 @@ const ItemsForm = () => {
         desc: "",
         tags: "",
         onFloor: 0,
-        owner: ""
+        owner: {Companies: "", User: ""}
 
     }
     const [formState, setFormState] = useState(initValues)
@@ -156,16 +156,26 @@ const ItemsForm = () => {
                         onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Item Owner">
-                    Owner
+                <label htmlFor="Item Owner: Companies">
+                    Owner: Companies
                     <input
                         type="text"
                         name="owner"
                         placeholder="Who Owns This Item Entry"
-                        value={initValues.owner}
+                        value={initValues.owner.Companies}
                         onChange={handleChange}
                     />
-                </label>                
+                </label>  
+                <label htmlFor="Item Owner: User">
+                    Owner: User
+                    <input
+                        type="text"
+                        name="owner"
+                        placeholder="Who Owns This Item Entry"
+                        value={initValues.owner.User}
+                        onChange={handleChange}
+                    />
+                </label>               
             </form>
         </ItemsStyles>
     )

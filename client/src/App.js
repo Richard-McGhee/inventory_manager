@@ -5,6 +5,7 @@ import ItemForm from "./components/ItemForm";
 import CompanyForm from "./components/CompanyForm";
 import UserLoginForm from "./components/UserLoginForm"
 import UserRegisterForm from "./components/UserRegisterForm";
+import Inventory from "./components/Inventory";
 import "./App.css";
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
         <Link to="/register" className="navLinks">
           Register
         </Link>
+        <Link to="/inventory" className="navLinks">
+          Inventory
+        </Link>
       </nav>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -33,6 +37,7 @@ function App() {
         <Route path="/companyInventory" component={CompanyForm} />
         <Route path="/login" component={UserLoginForm} />
         <Route path="/register" component={UserRegisterForm} />
+        <Route path="/inventory" component={Inventory} />
       </Switch>
     </div>
   );

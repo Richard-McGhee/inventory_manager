@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import { register } from './API/APICalls'
 import styled from 'styled-components'
 
 const UserStyles = styled.div`
@@ -30,6 +31,14 @@ const UserForm = () => {
     const handleSubmit = evt => {
         evt.preventDefault()
         setRegisterInfo(formState)
+        // This will handle our registering after user submits
+        // register("placholderUrl", registerInfo)
+        // .then((res) => {
+        //     // This will push to registered home
+        // })
+        // .catch((err) => {
+        //     console.dir(err)
+        // })
     }
 
     return ( 

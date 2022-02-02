@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import { makeItem } from './API/APICalls'
 import styled from 'styled-components'
 
 const ItemsStyles = styled.div`
@@ -32,6 +33,7 @@ const ItemsForm = () => {
 
     }
     const [formState, setFormState] = useState(initValues)
+    const [newItem, setNewItem] = useState(initValues)
 
     const handleChange = evt => {
         setFormState({
@@ -40,6 +42,15 @@ const ItemsForm = () => {
     }
     const handleSubmit = evt => {
         evt.preventDefault()
+        setNewItem(formState)
+        // This will add items to the database
+        // makeItem("urlPlaceholder", newItem)
+        // .then((res) => {
+        //     // This will push to inventory page with new item
+        // })
+        // .catch((err) => {
+        //     console.dir(err)
+        // })
     }
 
     return ( 

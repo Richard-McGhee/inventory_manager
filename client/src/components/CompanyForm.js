@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import { getItems } from './API/APICalls'
 import styled from 'styled-components'
 
 const CompanyStyles = styled.div`
@@ -34,6 +35,13 @@ const CompanyForm = () => {
     const handleSubmit = evt => {
         evt.preventDefault()
         // This will get us the inventory using a get request and rerender
+        // getItems("urlPlaceholder")
+        // .then((res) => {
+        //     setInventory(res.data)
+        // })
+        // .catch((err) => {
+        //     console.dir(err)
+        // })
     }
 
     return ( 

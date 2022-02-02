@@ -29,8 +29,14 @@ const UserForm = () => {
     const handleSubmit = evt => {
         evt.preventDefault()
         setLoginInfo(formState)
-        // logIn(loginInfo)
         // This will push to home page on success
+        // logIn(loginInfo)
+        // .then((res) => {
+        //     // This will push you to the logged in home on success
+        // })
+        // .catch((err) => {
+        //     console.dir(err)
+        // })
     }
 
     return ( 

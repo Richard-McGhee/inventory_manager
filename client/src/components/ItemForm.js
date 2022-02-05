@@ -3,9 +3,15 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const ItemsStyles = styled.div`
+    h1{
+        text-align: center;
+        color: #D3C422;
+    }
+    h1:hover{
+        color: #C8A659;
+    }
     form{
         margin: 0 auto;
-        margin-top: 5%;
         width: 40%;
         display: flex;
         flex-direction: column;
@@ -55,6 +61,7 @@ const ItemsForm = () => {
 
     return ( 
         <ItemsStyles>
+            <h1>Create a New Item</h1>
             <form onSubmit={handleSubmit}> 
                 <label htmlFor="Item Name">
                     Name

@@ -3,6 +3,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const UserStyles = styled.div`
+    h1{
+        text-align: center;
+        color: #D3C422;
+    }
+    h1:hover{
+        color: #C8A659;
+    }
     form{
         display: flex;
         justify-content: space-around;
@@ -17,6 +24,7 @@ const UserForm = () => {
     const initValues = {
         name: "",
         password: "",
+        passConfirm: "",
         email: "",
         comapnies: ""
     }
@@ -43,6 +51,7 @@ const UserForm = () => {
 
     return ( 
         <UserStyles>
+            <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="User Name">
                     UserName
@@ -61,6 +70,16 @@ const UserForm = () => {
                         name="password"
                         placeholder="Enter Password"
                         value={formState.password}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label htmlFor="User Password">
+                    Confirm Password
+                    <input
+                        type="text"
+                        name="passConfirm"
+                        placeholder="Confirm Password"
+                        value={formState.passConfirm}
                         onChange={handleChange}
                     />
                 </label>

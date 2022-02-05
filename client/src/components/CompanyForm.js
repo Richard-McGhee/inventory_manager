@@ -3,7 +3,14 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const CompanyStyles = styled.div`
-form{
+    h1{
+        text-align: center;
+        color: #D3C422;
+    }
+    h1:hover{
+        color: #C8A659;
+    }
+    form{
         display: flex;
         justify-content: space-around;
     }
@@ -46,6 +53,7 @@ const CompanyForm = () => {
 
     return ( 
         <CompanyStyles>
+            <h1>Add a Company</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="Company Name">
                     Company Name
@@ -78,7 +86,6 @@ const CompanyForm = () => {
                     />
                 </label>
             </form>
-            <div>Placeholder</div>
         </CompanyStyles>
     )
 }

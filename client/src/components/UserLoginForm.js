@@ -3,6 +3,13 @@ import styled from 'styled-components'
 // import { logIn } from './API/APICalls'
 
 const UserStyles = styled.div`
+    h1{
+        text-align: center;
+        color: #D3C422;
+    }
+    h1:hover{
+        color: #C8A659;
+    }
     form{
         display: flex;
         justify-content: space-around;
@@ -41,6 +48,7 @@ const UserForm = () => {
 
     return ( 
         <UserStyles>
+            <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="User Name">
                     UserName

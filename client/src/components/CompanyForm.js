@@ -78,7 +78,7 @@ const CompanyForm = () => {
                     />
                 </label>
             </form>
-            {inventory.length > 0 ? <div className="inventory">placeholder</div> : <div className="empty">Empty Placeholder</div>}
+            <div>Placeholder</div>
         </CompanyStyles>
     )
 }

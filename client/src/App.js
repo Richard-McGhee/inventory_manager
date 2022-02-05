@@ -18,8 +18,8 @@ function App() {
         <Link to="/addItem" className="navLinks">
           +
         </Link>
-        <Link to="/companyInventory" className="navLinks">
-          Inventory
+        <Link to="/company" className="navLinks">
+          Company
         </Link>
         <Link to="/login" className="navLinks">
           Login
@@ -34,7 +34,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/addItem" component={ItemForm} />
-        <Route path="/companyInventory" component={CompanyForm} />
+        <Route path="/company" component={CompanyForm} />
         <Route path="/login" component={UserLoginForm} />
         <Route path="/register" component={UserRegisterForm} />
         <Route path="/inventory" component={Inventory} />

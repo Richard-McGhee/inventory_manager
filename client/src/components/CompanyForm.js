@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import * as yup from 'yup'
+import { companySchema } from './Utilities/YupSchemas'
 // import { getItems } from './API/API'
 import styled from 'styled-components'
 
@@ -31,25 +33,45 @@ const CompanyForm = () => {
         size: "",
         owners: ""
     }
+    const initErrors = {
+        name: "",
+        size: "",
+        owners: ""
+    }
+    const initDisabled = true
     const [formState, setFormState] = useState(initValues)
-    const [inventory, setInventory] = useState([])
+    const [formErrors, setFormErrors] = useState(initErrors)
+    const [disabled, setDisabled] = useState(initDisabled)
 
     const handleChange = evt => {
+        const {name, value} = evt.target
+        yup
+            .reach(companySchema, name)
+            .validate(value)
+            .then(() => {
+                setFormErrors({
+                    ...formErrors, [name]: ""
+                })
+            })
+            .catch(err => {
+                setFormErrors({
+                    ...formErrors, [name]: err.errors[0]
+                })
+            })
         setFormState({
             ...formState,
-            [evt.target.name]: evt.target.value})
+            [name]: value})
     }
     const handleSubmit = evt => {
         evt.preventDefault()
-        // This will get us the inventory using a get request and rerender
-        // getItems("urlPlaceholder")
-        // .then((res) => {
-        //     setInventory(res.data)
-        // })
-        // .catch((err) => {
-        //     console.dir(err)
-        // })
     }
+
+    useEffect(() => {
+        companySchema.isValid(formState)
+        .then(valid => {
+            setDisabled(!valid)
+        })
+    }, [formState])
 
     return ( 
         <CompanyStyles>
@@ -85,6 +107,13 @@ const CompanyForm = () => {
                         onChange={handleChange}
                     />
                 </label>
+
+                <div className="errors">
+                    <div>{formErrors.name}</div>
+                    <div>{formErrors.size}</div>
+                    <div>{formErrors.owners}</div>
+                    <button disabled={disabled}>Add Company</button>
+                </div>
             </form>
         </CompanyStyles>
     )

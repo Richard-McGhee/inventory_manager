@@ -19,11 +19,10 @@ const registerSchema = yup.object().shape({
     password: yup
         .string()
         .min(8, "password must be at least 8 characters long.")
-        .required("password is Required"),
+        .required("Password is Required"),
     passConfirm: yup
         .string()
-        .min(8, "password must be at least 8 characters long.")
-        .required("password is Required"),
+        .oneOf([yup.ref("password"), null], "Passwords must match"),
     email: yup
         .string()
         .email()
@@ -78,8 +77,22 @@ const itemSchema = yup.object().shape({
         .required("Owner is required.")
 })
 
+const companySchema = yup.object().shape({
+    name: yup
+        .string()
+        .min(3, "Company name must be at least 3 characters.")
+        .required("Company name is required."),
+    size: yup
+        .string()
+        .required("Company size is required."),
+    owners: yup
+        .string()
+        .required("Company owner is required.")
+})
+
 export {
     loginSchema,
     registerSchema,
-    itemSchema
+    itemSchema,
+    companySchema
 }

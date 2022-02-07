@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import * as yup from 'yup'
+import { loginSchema } from './Utilities/YupSchemas'
 import styled from 'styled-components'
-// import { logIn } from './API/APICalls'
+// import { logIn } from './API/API'
 
 const UserStyles = styled.div`
     h1{
@@ -21,30 +24,62 @@ const UserStyles = styled.div`
 `
 
 const UserForm = () => {
+    const { push } = useHistory()
     const initValues = {
         name: "",
         password: ""
     }
+    const initErrors = {
+        name: "",
+        password: ""
+    }
+    const initDisabled = true
+    
     const [formState, setFormState] = useState(initValues)
     const [loginInfo, setLoginInfo] = useState(initValues)
+    const [formErrors, setFormErrors] = useState(initErrors)
+    const [disabled, setDisabled] = useState(initDisabled)
 
     const handleChange = evt => {
+
+        const {name, value} = evt.target
+        yup
+            .reach(loginSchema, name)
+            .validate(value)
+            .then(() => {
+                setFormErrors({
+                    ...formErrors, [name]: ""
+                })
+            })
+            .catch(err => {
+                setFormErrors({
+                    ...formErrors, [name]: err.errors[0]
+                })
+            })
         setFormState({
             ...formState,
-            [evt.target.name]: evt.target.value})
+            [name]: value})
     }
     const handleSubmit = evt => {
         evt.preventDefault()
         setLoginInfo(formState)
         // This will push to home page on success
-        // logIn(loginInfo)
+        // logIn("url", loginInfo)
         // .then((res) => {
-        //     // This will push you to the logged in home on success
+        //     localStorafe.setItem("token", res.data.token)
         // })
         // .catch((err) => {
         //     console.dir(err)
         // })
+        // push("/")
     }
+
+    useEffect(() => {
+        loginSchema.isValid(formState)
+        .then(valid => {
+            setDisabled(!valid)
+        })
+    }, [formState])
 
     return ( 
         <UserStyles>
@@ -70,6 +105,11 @@ const UserForm = () => {
                         onChange={handleChange}
                     />
                 </label>
+                <div className="errors">
+                    <div>{formErrors.name}</div>
+                    <div>{formErrors.password}</div>
+                    <button disabled={disabled}>Login</button>
+                </div>
             </form>
         </UserStyles>
     )

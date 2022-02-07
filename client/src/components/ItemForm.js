@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import { makeItem } from './API/APICalls'
+// import { makeItem } from './API/API'
 import styled from 'styled-components'
 
 const ItemsStyles = styled.div`
@@ -35,7 +35,7 @@ const ItemsForm = () => {
         desc: "",
         tags: "",
         onFloor: 0,
-        owner: {Companies: "", User: ""}
+        owner: ""
 
     }
     const [formState, setFormState] = useState(initValues)
@@ -163,7 +163,17 @@ const ItemsForm = () => {
                         onChange={handleChange}
                     />
                 </label>
-                <label htmlFor="Item Owner: Companies">
+                <label htmlFor="Item Owner">
+                    Owner
+                    <input
+                        type="text"
+                        name="owner"
+                        placeholder="Who Owns This Item Entry"
+                        value={initValues.owner}
+                        onChange={handleChange}
+                    />
+                </label>
+                {/* <label htmlFor="Item Owner: Companies">
                     Owner: Companies
                     <input
                         type="text"
@@ -172,8 +182,8 @@ const ItemsForm = () => {
                         value={initValues.owner.Companies}
                         onChange={handleChange}
                     />
-                </label>  
-                <label htmlFor="Item Owner: User">
+                </label>   */}
+                {/* <label htmlFor="Item Owner: User">
                     Owner: User
                     <input
                         type="text"
@@ -182,7 +192,7 @@ const ItemsForm = () => {
                         value={initValues.owner.User}
                         onChange={handleChange}
                     />
-                </label>               
+                </label>                */}
             </form>
         </ItemsStyles>
     )

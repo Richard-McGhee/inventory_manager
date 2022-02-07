@@ -37,6 +37,16 @@ const getFiltered = url => {
     axios.get(url)
 }
 
+const axiosAuth = () => {
+    const token = localStorage.getItem("token")
+
+    return axios.create({
+        headers: {
+            Authorization: token
+        }
+    })
+}
+
 export {
     makeItem,
     delItem,
@@ -44,5 +54,6 @@ export {
     logOut,
     register,
     getItems,
-    getFiltered
+    getFiltered,
+    axiosAuth
 }

@@ -57,7 +57,8 @@ const Inventory = () => {
                             Description - {item.desc}<br/>
                             Tags - {item.tags}<br/>
                             On Floor - {item.onFloor}<br/>
-                            Owner(s) - {item.owner.Companies} - {item.owner.User}
+                            Owner(s) - {item.owner} 
+                            {/* Owner(s) - {item.owner.Companies} - {item.owner.User} */}
                         </div>
                     // </Link>
                 )) : <div>EMPTY</div>}

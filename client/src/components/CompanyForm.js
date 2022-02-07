@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import { getItems } from './API/APICalls'
+// import { getItems } from './API/API'
 import styled from 'styled-components'
 
 const CompanyStyles = styled.div`

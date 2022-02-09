@@ -7,6 +7,10 @@ const makeItem = (url, newItem) => {
     axios.post(url, newItem)
 }
 
+const updateItem = (url, updatedItem) => {
+    axios.put(url, updatedItem)
+}
+
 // Deleting Items - delete
 const delItem = (url) => {
     axios.delete(url)
@@ -49,6 +53,7 @@ const axiosAuth = () => {
 
 export {
     makeItem,
+    updateItem,
     delItem,
     logIn,
     logOut,

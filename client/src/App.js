@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import ItemForm from "./components/ItemForm";
+import ItemUpdateForm from "./components/ItemUpdateForm";
 import CompanyForm from "./components/CompanyForm";
 import UserLoginForm from "./components/UserLoginForm"
 import UserRegisterForm from "./components/UserRegisterForm";
@@ -17,6 +18,9 @@ function App() {
         </Link>
         <Link to="/addItem" className="navLinks">
           +
+        </Link>
+        <Link to="/updateItem" className="navLinks">
+          Update
         </Link>
         <Link to="/company" className="navLinks">
           Company
@@ -34,6 +38,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/addItem" component={ItemForm} />
+        <Route path="/updateItem" component={ItemUpdateForm} />
         <Route path="/company" component={CompanyForm} />
         <Route path="/login" component={UserLoginForm} />
         <Route path="/register" component={UserRegisterForm} />

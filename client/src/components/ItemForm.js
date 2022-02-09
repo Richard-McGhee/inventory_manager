@@ -109,7 +109,7 @@ const ItemsForm = () => {
                         type="number"
                         name="sku"
                         placeholder="0"
-                        value={initValues.sku}
+                        value={initValues.SKU}
                         onChange={handleChange}
                     />
                 </label>

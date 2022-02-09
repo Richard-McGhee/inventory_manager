@@ -50,7 +50,7 @@ const itemSchema = yup.object().shape({
         .string()
         .min(3, "Category must be at least 3 characters long.")
         .required("Category is required."),
-    sku: yup
+    SKU: yup
         .number()
         .min(1, "SKU must be at least 1 character long")
         .required("SKU is required."),

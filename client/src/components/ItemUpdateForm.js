@@ -25,12 +25,13 @@ const ItemsStyles = styled.div`
 `
 
 const ItemsForm = () => {
-    const initValues = dummyItems[0]
+    const startingItem = dummyItems[0]
+    const initValues = startingItem
     const [formState, setFormState] = useState(initValues)
     const [updatedItem, setUpdatedItem] = useState(initValues)
 
     const handleChange = evt => {
-        setFormState({
+        setUpdatedItem({
             ...formState,
             [evt.target.name]: evt.target.value})
     }
@@ -57,7 +58,7 @@ const ItemsForm = () => {
                         type="text"
                         name="name"
                         placeholder="Enter Item Name"
-                        value={initValues.name}
+                        value={updatedItem.name}
                         onChange={handleChange}
                     />
                 </label>
@@ -67,7 +68,7 @@ const ItemsForm = () => {
                         type="number"
                         name="quantity"
                         placeholder="0"
-                        value={initValues.quantity}
+                        value={updatedItem.quantity}
                         onChange={handleChange}
                     />
                 </label>
@@ -77,7 +78,7 @@ const ItemsForm = () => {
                         type="float"
                         name="price"
                         placeholder="0.00"
-                        value={initValues.price}
+                        value={updatedItem.price}
                         onChange={handleChange}
                     />
                 </label>
@@ -87,7 +88,7 @@ const ItemsForm = () => {
                         type="text"
                         name="category"
                         placeholder="Enter Item Category"
-                        value={initValues.category}
+                        value={updatedItem.category}
                         onChange={handleChange}
                     />
                 </label>
@@ -97,7 +98,7 @@ const ItemsForm = () => {
                         type="number"
                         name="sku"
                         placeholder="0"
-                        value={initValues.sku}
+                        value={updatedItem.SKU}
                         onChange={handleChange}
                     />
                 </label>
@@ -107,7 +108,7 @@ const ItemsForm = () => {
                         type="number"
                         name="sold"
                         placeholder="0"
-                        value={initValues.sold}
+                        value={updatedItem.sold}
                         onChange={handleChange}
                     />
                 </label>
@@ -117,7 +118,7 @@ const ItemsForm = () => {
                         type="number"
                         name="onHand"
                         placeholder="0"
-                        value={initValues.onHand}
+                        value={updatedItem.onHand}
                         onChange={handleChange}
                     />
                 </label>
@@ -127,7 +128,7 @@ const ItemsForm = () => {
                         type="text"
                         name="desc"
                         placeholder="Enter Item Description"
-                        value={initValues.desc}
+                        value={updatedItem.desc}
                         onChange={handleChange}
                     />
                 </label>
@@ -137,7 +138,7 @@ const ItemsForm = () => {
                         type="text"
                         name="tags"
                         placeholder="Enter Item Tags"
-                        value={initValues.tags}
+                        value={updatedItem.tags}
                         onChange={handleChange}
                     />
                 </label>
@@ -147,7 +148,7 @@ const ItemsForm = () => {
                         type="number"
                         name="onFloor"
                         placeholder="0"
-                        value={initValues.onFloor}
+                        value={updatedItem.onFloor}
                         onChange={handleChange}
                     />
                 </label>
@@ -157,7 +158,7 @@ const ItemsForm = () => {
                         type="text"
                         name="owner"
                         placeholder="Who Owns This Item Entry"
-                        value={initValues.owner}
+                        value={updatedItem.owner}
                         onChange={handleChange}
                     />
                 </label>
@@ -167,7 +168,7 @@ const ItemsForm = () => {
                         type="text"
                         name="owner"
                         placeholder="Who Owns This Item Entry"
-                        value={initValues.owner.Companies}
+                        value={updatedItem.owner.Companies}
                         onChange={handleChange}
                     />
                 </label>   */}
@@ -177,7 +178,7 @@ const ItemsForm = () => {
                         type="text"
                         name="owner"
                         placeholder="Who Owns This Item Entry"
-                        value={initValues.owner.User}
+                        value={updatedItem.owner.User}
                         onChange={handleChange}
                     />
                 </label>                */}

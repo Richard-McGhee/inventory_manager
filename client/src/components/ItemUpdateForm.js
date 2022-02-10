@@ -8,9 +8,6 @@ const ItemsStyles = styled.div`
         text-align: center;
         color: #D3C422;
     }
-    h1:hover{
-        color: #C8A659;
-    }
     form{
         margin: 0 auto;
         width: 40%;
@@ -37,15 +34,15 @@ const ItemsForm = () => {
     }
     const handleSubmit = evt => {
         evt.preventDefault()
-        setUpdatedItem(formState)
-        // This will add items to the database
-        // makeItem("urlPlaceholder", newItem)
+        // This will update the item on the database
+        // updateItem("urlPlaceholder", updatedItem)
         // .then((res) => {
-        //     // This will push to inventory page with new item
+        //     console.log(res)
         // })
         // .catch((err) => {
         //     console.dir(err)
         // })
+        // This will push to inventory page with the updated item
     }
 
     return ( 

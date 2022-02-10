@@ -7,9 +7,6 @@ const ItemsStyles = styled.div`
         text-align: center;
         color: #D3C422;
     }
-    h1:hover{
-        color: #C8A659;
-    }
     form{
         margin: 0 auto;
         width: 40%;

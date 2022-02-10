@@ -12,9 +12,6 @@ const InventoryStyles = styled.div`
         text-align: center;
         color: #D3C422;
     }
-    h1:hover{
-        color: #C8A659;
-    }
     div{
         width: 100%;
         display: flex;
